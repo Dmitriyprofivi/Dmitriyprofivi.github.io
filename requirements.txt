@@ -3,3 +3,4 @@ requests
 wheel
 aiohttp
 pyTelegramBotAPI
+g4f
