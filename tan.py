@@ -6,14 +6,6 @@ bot=telebot.TeleBot(token)
 @bot.message_handler(commands=['start'])
 def start_message(message):
 	bot.send_message(message.chat.id,'Привет, я бот созданный с использованием доработанной модели gpt, от Paranormal Games, отправьте мне любой интересующий вас вопрос')
-@bot.message_handler(commands=["geo"])
-def geo(message):
-    keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
-    button_geo = types.KeyboardButton(text="Отправить местоположение", request_location=True)
-    keyboard.add(button_geo)
-    bot.send_message(
-        message.chat.id, "Нажмите на кнопку, чтобы передать свое местоположение боту.",
-        reply_markup=keyboard)
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
 	zapros=message.text
